@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+
+spawn ./test.sh  ### spawn scp file.xt kali@ip:/home/kali/
+
+expect "password:"  ##no colons
+
+send -- "kali\r"
+
+expect eof
